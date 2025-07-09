@@ -1,6 +1,11 @@
+#load syntax: conjur policy load -b root -f 001_authn-iam.yml
+
+# Create IAM authenticator webservice and associated group for Hosts to authenticate
 # policy id needs to match the convention `conjur/authn-iam/<service ID>`
+
+
 - !policy
-  id: conjur/authn-iam/prod
+  id: conjur/authn-iam/demo
   body:
   - !webservice
 
