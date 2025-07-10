@@ -1,0 +1,13 @@
+//attach this as an inline policy to your AWS role
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": "sts:*",
+      "Resource": "arn:aws:iam::<AWS-account-id>:role/<IAM-role>"  //replace account id and role with your environment's values
+    }
+  ]
+}
