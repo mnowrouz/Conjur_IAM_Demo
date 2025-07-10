@@ -39,7 +39,7 @@ def authenticate_conjur_with_iam(headers:dict):
   identity="host/data/iam-ec2/111111111111/IAMConjurRole"     #user defined
   encoded_identity = quote(identity, safe="")
   authn_url = AUTHENTICATE_URL.format(url=url, authenticator="authn-iam/default", account="conjur", identity=encoded_identity)  #user defined
-  response = requests.post(authn_url, headers={ 'Accept-Encoding': 'base64'}, data=json.dumps(headers), verify=True)
+  response = requests.post(authn_url, headers={ 'Accept-Encoding': 'base64'}, data=json.dumps(headers), verify=True) # Set to false if using self signed certs
   token = response.content.decode("utf-8").strip()
   return dict(token=token)
  
